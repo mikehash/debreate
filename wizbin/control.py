@@ -91,7 +91,7 @@ class Page(ui.page.Page):
       "all", "alpha", "amd64", "arm", "arm64", "armeb", "armel",
       "armhf", "avr32", "hppa", "i386", "ia64", "lpia", "m32r",
       "m68k", "mips", "mipsel", "powerpc", "powerpcspe", "ppc64",
-      "s390", "s390x", "sh3", "sh3eb", "sh4", "sh4eb", "sparc",
+      "riscv64", "s390", "s390x", "sh3", "sh3eb", "sh4", "sh4eb", "sparc",
       "sparc64",
       )
 
