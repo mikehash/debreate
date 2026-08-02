@@ -128,6 +128,12 @@ __timestamps = {}
 #  @return
 #    Timestamp string & flag denoting change from a previous timestamp.
 def checkTimestamp(filepath):
+  # Guard against missing files/directories: os.stat raises FileNotFoundError,
+  # which crashes project loading for old project files that reference paths
+  # that no longer exist on the filesystem. Return None to let callers handle
+  # the missing file gracefully (they already detect it via os.path checks).
+  if not os.path.exists(filepath):
+    return None, False
   changed = False
   ts = os.stat(filepath).st_mtime
   if filepath in __timestamps:
