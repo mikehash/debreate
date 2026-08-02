@@ -18,6 +18,7 @@ import sys
 # MSYS/MinGW platforms
 __msys_list = ("msys", "mingw32", "mingw64", "clang32", "clang64", "clangarm64", "ucrt64")
 
+__os_name = "unknown"
 __core_name = sys.platform
 if __core_name == "win32":
   __os_name = __core_name
@@ -34,8 +35,6 @@ else:
       if line.startswith("DISTRIB_ID") and "=" in line:
         __os_name = line.split("=", 1)[1].strip()
         break
-if not __os_name:
-  __os_name = "unknown"
 __os_name = __os_name.lower()
 
 ## Retrieves detected operating system name.
