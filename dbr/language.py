@@ -76,6 +76,8 @@ def GetLocaleDir():
 def setTranslator(path):
   global __translator
   l_code = getLocale()
+  if l_code is None:
+    l_code = __native_code
   __logger.debug("locale code: {}".format(l_code))
   __logger.debug("locale directory: {}".format(path))
   if l_code != __native_code:
