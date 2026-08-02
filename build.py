@@ -94,7 +94,7 @@ def stageApp(prefix):
 
   dir_target = paths.join(prefix, package_name)
   for _dir in dirs_app:
-    checkError((fileio.copyDir(paths.join(dir_app, _dir), dir_target, _dir, _filter="\.py$", exclude="__pycache__", verbose=options.verbose)))
+    checkError((fileio.copyDir(paths.join(dir_app, _dir), dir_target, _dir, _filter=r"\.py$", exclude="__pycache__", verbose=options.verbose)))
   exe = cfg.getValue("executable")
   checkError((fileio.copyExecutable(paths.join(dir_app, exe), dir_target, exe, verbose=options.verbose)))
 
